@@ -30,7 +30,7 @@ def exponentiated_quadratic(xa, xb):
 
 # Show covariance matrix example from exponentiated quadratic
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 3))
-xlim = (-3, 3)
+xlim = (0, 1)
 X = np.expand_dims(np.linspace(*xlim, 25), 1)
 Σ = exponentiated_quadratic(X, X)
 # Plot covariance matrix
@@ -81,7 +81,7 @@ X = np.expand_dims(np.linspace(-4, 4, nb_of_samples), 1)
 # Draw samples from the prior at our data points.
 # Assume a mean of 0 for simplicity
 ys = np.random.multivariate_normal(
-    mean=np.zeros(nb_of_samples), cov=Σ*Σ*Σ*Σ, 
+    mean=np.zeros(nb_of_samples), cov=Σ,
     size=number_of_functions)
 
 
